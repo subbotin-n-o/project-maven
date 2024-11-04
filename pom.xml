@@ -11,6 +11,8 @@
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
+        <javafx-controls.version>18.0.1</javafx-controls.version>
+        <desktop-game-engine.version>18.0.1</desktop-game-engine.version>
     </properties>
 
     <dependencyManagement>
@@ -30,18 +32,21 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>18.0.1</version>
+            <version>${javafx-controls.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.javarush</groupId>
             <artifactId>desktop-game-engine</artifactId>
-            <version>1.0</version>
+            <version>${desktop-game-engine.version}}</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/desktop-game-engine.jar</systemPath>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
