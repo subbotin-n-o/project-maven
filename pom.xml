@@ -12,7 +12,7 @@
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
         <javafx-controls.version>18.0.1</javafx-controls.version>
-        <desktop-game-engine.version>18.0.1</desktop-game-engine.version>
+        <desktop-game-engine.version>1.0</desktop-game-engine.version>
     </properties>
 
     <dependencyManagement>
@@ -42,7 +42,7 @@
         <dependency>
             <groupId>com.javarush</groupId>
             <artifactId>desktop-game-engine</artifactId>
-            <version>${desktop-game-engine.version}}</version>
+            <version>${desktop-game-engine.version}</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/desktop-game-engine.jar</systemPath>
         </dependency>
@@ -61,11 +61,13 @@
                 <targetPath>lib/</targetPath>
             </resource>
         </resources>
+
         <plugins>
             <!-- Usual compilation -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
@@ -80,9 +82,11 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -92,9 +96,11 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                 </configuration>
@@ -109,9 +115,11 @@
                     <mainClass>com.javarush.games.racer.RacerGame</mainClass>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
                 <configuration>
                     <includes>
                         <include>**/properties/*</include>
@@ -128,9 +136,11 @@
                     </archive>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.2</version>
                 <configuration>
                     <excludes>StrangeTest.java</excludes>
                 </configuration>
